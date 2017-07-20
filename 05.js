@@ -7,8 +7,8 @@ mostre quais são arquivos.
 
 */
 
-var fs = require('fs')
-var Promise = require('promise')
+const fs = require('fs')
+const Promise = require('promise')
 
 const path = './'
 function readdirPromise(path){
@@ -57,13 +57,13 @@ async function asyncReaddirPromise(){
     filesFor = []
     for(let i=0; i < paths.length; i++)
     {
-        ifFile = await asyncFsStat(files[i])
-        console.log(files[i])
+        ifFile = await asyncFsStat(paths[i])
+        console.log(paths[i])
         console.log(ifFile)
         if(ifFile)
         {
             console.log('É arquivo')
-            filesFor.push(files[i])
+            filesFor.push(paths[i])
         }
         else
         {
